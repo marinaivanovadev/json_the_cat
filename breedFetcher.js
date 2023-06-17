@@ -2,11 +2,11 @@ const request = require('request'); // request library
 // access to command line for Node.js
 
 const breedName = process.argv[2]; // the third element
-
+//console.log(breedName);
 
 // request to check loads is fine
 
-request(`https://api.thecatapi.com/v1/breeds/search?q=Chartreux`, (error, response, body) => {
+request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName}`, (error, response, body) => {
   if (!error && response.statusCode === 200) {
     console.log(`Request loaded`);
 
